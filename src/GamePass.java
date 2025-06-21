@@ -14,9 +14,20 @@ public class GamePass {
         this.daftarGame = new ArrayList<>();
     }
 
-    //setter, menambahkan game yang masuk ke list gamepass
+    //menambahkan game yang masuk ke list gamepass
     public void tambahGame(GameBerbayar game) {
-        daftarGame.add(game);
+        if (!daftarGame.contains(game)) {
+            daftarGame.add(game);
+        }
+    }
+
+    //menghapus game dari list gamepass
+    public boolean hapusGame(GameBerbayar game) {
+        if (daftarGame.remove(game)) {
+            game.setTersediaDiGamePass(false);
+            return true;
+        }
+        return false;
     }
 
     //print list game dalam gamepass
@@ -26,4 +37,10 @@ public class GamePass {
             g.tampilkanInfo();
         }
     }
+
+    //getter
+    public int getIdPaket() { return idPaket; }
+    public String getNamaPaket() { return namaPaket; }
+    public double getHargaBulanan() { return hargaBulanan; }
+    public ArrayList<GameBerbayar> getDaftarGame() { return daftarGame; }
 }

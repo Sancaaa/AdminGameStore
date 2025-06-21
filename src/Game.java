@@ -17,11 +17,19 @@ public abstract class Game {
 
     public abstract void tampilkanInfo(); //diubah pada children
 
-    public int getIdGame() { //getter id
-        return idGame;
-    }
-
     public void setTersediaDiGamePass(boolean status) { //setter status
         this.tersediaDiGamePass = status;
     }
+
+    //setter
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    //getter
+    public int getIdGame() { return idGame; }
+    public String getNama() { return nama; }
+    public String getDeskripsi() { return deskripsi; }
+    public String getKategori() { return kategori; }
+    public boolean isTersediaDiGamePass() { return tersediaDiGamePass; }
 }
